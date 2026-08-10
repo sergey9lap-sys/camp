@@ -45,10 +45,21 @@
       </section>
 
       <section class="summer-window" id="situation" data-nav="situation">
-        <div class="section-shell statement-grid">
-          <p class="section-kicker reveal">Окно для изменений</p>
-          <h2 class="statement split-heading">Лето — единственное окно, когда можно перестроить бизнес до&nbsp;осеннего сезона.</h2>
-          <p class="statement-note reveal">Не пытаться успеть ещё больше. <strong>Остановиться, увидеть систему целиком</strong> и&nbsp;принять решения, которые определят 2027&nbsp;год.</p>
+        <div class="section-shell summer-layout">
+          <div class="summer-copy">
+            <p class="section-kicker reveal">Окно для изменений</p>
+            <h2 class="statement split-heading">Лето — окно, когда можно перестроить бизнес до&nbsp;осеннего сезона.</h2>
+            <p class="statement-note reveal">Остановиться, увидеть систему целиком и&nbsp;собрать решения, которые определят 2027&nbsp;год.</p>
+          </div>
+          <figure class="calendar-visual reveal-media" aria-label="Календарь ключевых событий: вебинар, запуск, лагерь и клуб">
+            <img src="/calendar-plan.avif" alt="Открытый календарь с четырьмя отмеченными событиями" loading="lazy" />
+            <figcaption>
+              <span class="calendar-event calendar-event--webinar">Вебинар</span>
+              <span class="calendar-event calendar-event--launch">Запуск</span>
+              <span class="calendar-event calendar-event--camp">Лагерь</span>
+              <span class="calendar-event calendar-event--club">Клуб</span>
+            </figcaption>
+          </figure>
         </div>
       </section>
 
@@ -56,7 +67,7 @@
         <div class="section-shell">
           <h2 id="recognition-title" class="section-title split-heading">Узнаёте свой бизнес?</h2>
           <div class="recognition-list">
-            <article class="recognition-row tilt-card"><span>01</span><h3>Работаете больше, а&nbsp;зарабатываете не&nbsp;больше</h3><p>Старые действия требуют <strong>всё больше сил</strong> и&nbsp;дают всё меньше результата.</p></article>
+            <article class="recognition-row tilt-card"><span>01</span><h3>Работаете больше, а&nbsp;зарабатываете меньше</h3><p>Старые действия требуют <strong>всё больше сил</strong> и&nbsp;дают всё меньше результата.</p></article>
             <article class="recognition-row tilt-card"><span>02</span><h3>Неясно, что продавать осенью</h3><p>Продуктов много, но&nbsp;неясно, какие из&nbsp;них <strong>действительно приведут к&nbsp;цели.</strong></p></article>
             <article class="recognition-row tilt-card"><span>03</span><h3>План первого полугодия не&nbsp;сошёлся</h3><p>До годовой цели остался разрыв, а&nbsp;<strong>закрывать его рывком уже не&nbsp;хочется.</strong></p></article>
             <article class="recognition-row tilt-card"><span>04</span><h3>Команда занята, но&nbsp;вы всё ещё центр системы</h3><p>Решения, контроль и&nbsp;пожары сходятся <strong>в&nbsp;одной точке — у&nbsp;вас.</strong></p></article>
@@ -70,7 +81,6 @@
         <div class="section-shell program-intro">
           <p class="section-kicker reveal">Не расписание лекций</p>
           <h2 class="section-title split-heading">На бизнес-лагере мы&nbsp;разберём</h2>
-          <p class="section-copy reveal">Без искусственной разбивки по&nbsp;дням: один связный маршрут от&nbsp;текущей точки к&nbsp;плану действий до&nbsp;декабря.</p>
         </div>
         <div class="route-shell">
           <div class="route-line" aria-hidden="true"><span></span></div>
@@ -133,15 +143,15 @@
             <p class="section-copy reveal">Калькулятор покажет <strong>разрыв до&nbsp;годовой цели</strong> и&nbsp;сколько продаж основного продукта потребуется, чтобы его закрыть.</p>
           </div>
           <form class="calculator" id="gap-calculator">
-            <label class="calc-control"><span>План выручки на&nbsp;2026&nbsp;год</span><span class="input-wrap"><input name="goal" inputmode="numeric" value="12000000" aria-label="План выручки на 2026 год, рублей" /><b aria-hidden="true">₽</b></span><input class="calc-range" type="range" data-for="goal" min="1000000" max="50000000" step="100000" value="12000000" aria-label="Изменить план выручки" /></label>
-            <label class="calc-control"><span>Уже заработано</span><span class="input-wrap"><input name="earned" inputmode="numeric" value="6400000" aria-label="Уже заработано, рублей" /><b aria-hidden="true">₽</b></span><input class="calc-range" type="range" data-for="earned" min="0" max="30000000" step="100000" value="6400000" aria-label="Изменить уже заработанную сумму" /></label>
-            <label class="calc-control"><span>Ожидаете заработать без&nbsp;изменений</span><span class="input-wrap"><input name="expected" inputmode="numeric" value="3200000" aria-label="Ожидаемая выручка без изменений, рублей" /><b aria-hidden="true">₽</b></span><input class="calc-range" type="range" data-for="expected" min="0" max="20000000" step="100000" value="3200000" aria-label="Изменить ожидаемую выручку" /></label>
-            <label class="calc-control"><span>Средняя стоимость продукта</span><span class="input-wrap"><input name="price" inputmode="numeric" value="120000" aria-label="Средняя стоимость продукта, рублей" /><b aria-hidden="true">₽</b></span><input class="calc-range" type="range" data-for="price" min="10000" max="1000000" step="10000" value="120000" aria-label="Изменить среднюю стоимость продукта" /></label>
+            <label class="calc-control"><span>План выручки на&nbsp;2026&nbsp;год</span><span class="input-wrap"><input name="goal" inputmode="numeric" value="12000000" aria-label="План выручки на 2026 год, рублей" /><b aria-hidden="true">Р</b></span><input class="calc-range" type="range" data-for="goal" min="1000000" max="50000000" step="100000" value="12000000" aria-label="Изменить план выручки" /></label>
+            <label class="calc-control"><span>Уже заработано</span><span class="input-wrap"><input name="earned" inputmode="numeric" value="6400000" aria-label="Уже заработано, рублей" /><b aria-hidden="true">Р</b></span><input class="calc-range" type="range" data-for="earned" min="0" max="30000000" step="100000" value="6400000" aria-label="Изменить уже заработанную сумму" /></label>
+            <label class="calc-control"><span>Ожидаете заработать без&nbsp;изменений</span><span class="input-wrap"><input name="expected" inputmode="numeric" value="3200000" aria-label="Ожидаемая выручка без изменений, рублей" /><b aria-hidden="true">Р</b></span><input class="calc-range" type="range" data-for="expected" min="0" max="20000000" step="100000" value="3200000" aria-label="Изменить ожидаемую выручку" /></label>
+            <label class="calc-control"><span>Средняя стоимость продукта</span><span class="input-wrap"><input name="price" inputmode="numeric" value="120000" aria-label="Средняя стоимость продукта, рублей" /><b aria-hidden="true">Р</b></span><input class="calc-range" type="range" data-for="price" min="10000" max="1000000" step="10000" value="120000" aria-label="Изменить среднюю стоимость продукта" /></label>
             <div class="calc-formula" aria-label="Формула расчёта"><span>Годовой план</span><i>−</i><span>уже заработано</span><i>−</i><span>ожидаемая выручка</span><i>=</i><strong>разрыв</strong></div>
             <div class="calc-result" aria-live="polite">
               <span>Разрыв до&nbsp;цели</span>
-              <strong id="gap-value">2&nbsp;400&nbsp;000&nbsp;₽</strong>
-              <p id="sales-value">Это 20&nbsp;продаж продукта со&nbsp;средним чеком 120&nbsp;000&nbsp;₽.</p>
+              <strong id="gap-value">2&nbsp;400&nbsp;000&nbsp;Р</strong>
+              <p id="sales-value">Это 20&nbsp;продаж продукта со&nbsp;средним чеком 120&nbsp;000&nbsp;Р.</p>
             </div>
             <a class="button button--accent magnetic" href="#join"><span>Собрать план до&nbsp;декабря</span><i aria-hidden="true"></i></a>
           </form>
@@ -193,9 +203,9 @@
             <h2 class="section-title split-heading">Не оставляем вас один на&nbsp;один с&nbsp;конспектом</h2>
           </div>
           <div class="continuation-list">
-            <article><div class="product-avatar" aria-hidden="true"><img src="/avatar-mentoring.avif" alt="" /></div><span>Если начинаете</span><h3>Менторинг</h3><p>Чтобы подготовить и&nbsp;провести <strong>первый системный запуск.</strong></p></article>
-            <article><div class="product-avatar" aria-hidden="true"><img src="/avatar-visioners.avif" alt="" /></div><span>Если уже есть опыт</span><h3>«Визионеры»</h3><p>Чтобы собирать <strong>стратегию следующего уровня</strong> вместе с&nbsp;равными.</p></article>
-            <article><div class="product-avatar" aria-hidden="true"><img src="/avatar-club.avif" alt="" /></div><span>Если нужна среда</span><h3>Клуб</h3><p><strong>Поддержка и&nbsp;внедрение</strong> в&nbsp;спокойном регулярном ритме.</p></article>
+            <article><div class="product-avatar" aria-hidden="true"><img src="/avatar-mentoring.avif" alt="" /></div><span>Если начинаете</span><h3>Экспертиза</h3><p>Чтобы подготовить и&nbsp;провести <strong>системный запуск.</strong></p></article>
+            <article><div class="product-avatar" aria-hidden="true"><img src="/avatar-visioners.avif" alt="" /></div><span>Если уже есть опыт</span><h3>Масштабирование</h3><p>Чтобы собирать <strong>стратегию следующего уровня</strong> вместе с&nbsp;равными.</p></article>
+            <article><div class="product-avatar" aria-hidden="true"><img src="/avatar-club.avif" alt="" /></div><span>Если нужна среда</span><h3>Окружение</h3><p><strong>Поддержка и&nbsp;внедрение</strong> в&nbsp;спокойном регулярном ритме.</p></article>
           </div>
         </div>
       </section>

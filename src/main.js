@@ -13,7 +13,7 @@ const bindRussianTypography = () => {
   const selector = 'h1,h2,h3,p,li,a,button,span,label';
   const nodes = document.querySelectorAll(selector);
   const shortWords = /(^|\s)(а|без|бы|в|во|да|для|до|же|за|и|из|их|к|ко|ли|на|над|не|ни|но|о|об|от|по|под|при|про|с|со|у)\s+(?=[А-Яа-яЁёA-Za-z0-9«])/gi;
-  const numberUnits = /(\d)\s+(?=(?:₽|%|дн|день|дня|дней|год|года|лет|января|февраля|марта|апреля|мая|июня|июля|августа|сентября|октября|ноября|декабря)\b)/gi;
+  const numberUnits = /(\d)\s+(?=(?:Р|%|дн|день|дня|дней|год|года|лет|января|февраля|марта|апреля|мая|июня|июля|августа|сентября|октября|ноября|декабря)\b)/gi;
   nodes.forEach((node) => {
     [...node.childNodes].filter((child) => child.nodeType === Node.TEXT_NODE).forEach((child) => {
       child.textContent = child.textContent.replace(shortWords, '$1$2\u00a0').replace(numberUnits, '$1\u00a0');
@@ -182,9 +182,9 @@ const initCalculator = () => {
     const price = Math.max(clean(data.get('price')), 1);
     const gap = Math.max(goal - earned - expected, 0);
     const sales = gap ? Math.ceil(gap / price) : 0;
-    document.querySelector('#gap-value').textContent = `${format.format(gap)} ₽`;
+    document.querySelector('#gap-value').textContent = `${format.format(gap)} Р`;
     document.querySelector('#sales-value').textContent = gap
-      ? `Это ${format.format(sales)} продаж продукта со средним чеком ${format.format(price)} ₽.`
+      ? `Это ${format.format(sales)} продаж продукта со средним чеком ${format.format(price)} Р.`
       : 'При текущем сценарии разрыва до цели нет. Можно планировать рост без аврального режима.';
     if (!reduceMotion) gsap.fromTo('.calc-result', { scale: .985, filter: 'brightness(1.08)' }, { scale: 1, filter: 'brightness(1)', duration: .28, ease: 'power3.out', overwrite: true });
   };
