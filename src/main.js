@@ -50,6 +50,28 @@ const initSmoothScroll = () => {
 const initHeader = () => {
   const header = document.querySelector('.site-header');
   if (!header) return;
+  const menuToggle = header.querySelector('.mobile-menu-toggle');
+  const menuPanel = header.querySelector('.mobile-menu-panel');
+  const closeMenu = ({ returnFocus = false } = {}) => {
+    header.classList.remove('menu-open');
+    menuToggle?.setAttribute('aria-expanded', 'false');
+    if (returnFocus) menuToggle?.focus();
+  };
+  menuToggle?.addEventListener('click', () => {
+    const willOpen = !header.classList.contains('menu-open');
+    header.classList.toggle('menu-open', willOpen);
+    menuToggle.setAttribute('aria-expanded', String(willOpen));
+  });
+  menuPanel?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => closeMenu()));
+  document.addEventListener('pointerdown', (event) => {
+    if (!header.contains(event.target)) closeMenu();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && header.classList.contains('menu-open')) closeMenu({ returnFocus: true });
+  });
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 600) closeMenu();
+  });
   ScrollTrigger.create({
     start: 120,
     onUpdate: (self) => header.classList.toggle('is-visible', self.scroll() > 120),
@@ -61,7 +83,7 @@ const initHeader = () => {
       end: 'bottom 48%',
       onToggle: ({ isActive }) => {
         if (!isActive) return;
-        document.querySelectorAll('.nav-links a').forEach((link) => {
+        document.querySelectorAll('.nav-links a, .mobile-menu-panel nav a').forEach((link) => {
           const active = link.getAttribute('href') === `#${section.id}`;
           link.classList.toggle('is-active', active);
           if (active) link.setAttribute('aria-current', 'location');
