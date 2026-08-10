@@ -120,18 +120,18 @@ button, input { font: inherit; }
 
 .recognition { min-height: 100svh; display: flex; align-items: center; padding: 70px 0 40px; }
 .recognition .section-title { margin-bottom: 20px; font-size: clamp(36px, 3.7vw, 50px); }
-.recognition-list { border-top: 1px solid rgba(20,32,65,.18); }
-.recognition-row { position: relative; isolation: isolate; overflow: hidden; display: grid; grid-template-columns: 64px 1.5fr 1fr; gap: 28px; align-items: center; min-height: 76px; padding: 10px 12px; border-bottom: 1px solid rgba(20,32,65,.18); transform-style: preserve-3d; transition: color 900ms var(--ease-ui), box-shadow 700ms var(--ease-ui); }
-.recognition-row::before { content: ""; position: absolute; z-index: -2; inset: 0; background: var(--blue); transform: scaleX(0); transform-origin: left; transition: transform 1050ms cubic-bezier(.22, .72, .18, 1); }
-.recognition-row::after { content: ""; position: absolute; z-index: -1; top: 0; bottom: 0; left: -18%; width: 18%; background: linear-gradient(90deg, transparent, rgba(201,220,255,.22), transparent); transform: translateX(0); opacity: 0; transition: transform 1100ms cubic-bezier(.22, .72, .18, 1), opacity 180ms ease; }
-.recognition-row:hover { color: var(--ivory); box-shadow: 0 18px 44px rgba(30,55,127,.15); }
-.recognition-row:hover::before { transform: scaleX(1); }
-.recognition-row:hover::after { transform: translateX(660%); opacity: 1; }
-.recognition-row > span { color: var(--blue); font-weight: 700; }
+.recognition-list { display: grid; gap: 7px; }
+.recognition-row { position: relative; isolation: isolate; overflow: hidden; display: grid; grid-template-columns: 64px 1.5fr 1fr; gap: 28px; align-items: center; min-height: 78px; padding: 11px 12px; border-top: 1px solid rgba(20,32,65,.18); border-bottom: 1px solid rgba(20,32,65,.18); transform-style: preserve-3d; transition: color 520ms cubic-bezier(.32,.72,0,1), box-shadow 700ms cubic-bezier(.32,.72,0,1); }
+.recognition-row::before { content: ""; position: absolute; z-index: -2; inset: 0; background: var(--blue); transform: translate3d(-101%,0,0); transition: transform 1450ms cubic-bezier(.37,0,.18,1); }
+.recognition-row::after { content: ""; position: absolute; z-index: -1; top: 0; bottom: 0; left: -22%; width: 22%; background: linear-gradient(90deg, transparent, rgba(201,220,255,.16), transparent); transform: translate3d(0,0,0); opacity: 0; transition: transform 1540ms cubic-bezier(.37,0,.18,1), opacity 320ms cubic-bezier(.32,.72,0,1); }
+.recognition-row:hover { color: var(--ivory); box-shadow: 0 18px 44px rgba(30,55,127,.15); transition-delay: 170ms, 0ms; }
+.recognition-row:hover::before { transform: translate3d(0,0,0); }
+.recognition-row:hover::after { transform: translate3d(555%,0,0); opacity: 1; }
+.recognition-row > span { color: var(--blue); font-weight: 700; transition: color 520ms cubic-bezier(.32,.72,0,1); }
 .recognition-row:hover > span { color: var(--sky); }
 .recognition-row h3 { max-width: 680px; margin: 0; font-size: clamp(24px, 2.15vw, 32px); line-height: 1.06; letter-spacing: -.028em; }
 .recognition-row p { margin: 0; color: var(--muted); }
-.recognition-row p { transition: color 480ms var(--ease-ui); }
+.recognition-row p { transition: color 520ms cubic-bezier(.32,.72,0,1); }
 .recognition-row:hover p { color: rgba(255,249,238,.76); }
 .recognition-row:hover p strong { color: var(--ivory); background: linear-gradient(transparent 62%, rgba(201,220,255,.24) 62%); }
 .recognition-close { max-width: 680px; margin: 16px auto 0; color: var(--blue); font-size: 18px; font-weight: 700; text-align: center; }
@@ -519,4 +519,5 @@ button, input { font: inherit; }
   .magnetic, .tilt-card, .route-line span { transform: none !important; }
   .marquee-row { animation: none; transform: none; }
   .audience-marquee { overflow-x: auto; }
+  .recognition-row, .recognition-row::before, .recognition-row::after, .recognition-row > span, .recognition-row p { transition: none; }
 }
