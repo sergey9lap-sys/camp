@@ -431,7 +431,21 @@ button, input { font: inherit; }
   .hero-portrait { z-index: 2; grid-column: 2; grid-row: 1 / 4; align-self: end; justify-self: start; width: 154%; height: 458px; min-height: 0; margin: 0 -18% 0 -36%; transform: translateY(-60px); overflow: visible; }
   .hero-portrait::before { inset: 8% -8% 0 2%; background: rgba(201,220,255,.48); border-radius: 50% 50% 8px 8px; box-shadow: none; }
   .hero-portrait img { inset: auto -12% 0 auto; width: 112%; height: 101%; object-position: right bottom; }
-  .hero-copy > .button { z-index: 5; grid-column: 1 / -1; grid-row: 4; position: static; width: 100%; margin: -57px 0 0; }
+  .hero-copy > .button {
+    z-index: 5;
+    grid-column: 1 / -1;
+    grid-row: 4;
+    position: static;
+    width: calc(100% - 20px);
+    min-width: 0;
+    height: 58px;
+    min-height: 58px;
+    justify-self: center;
+    margin: 10px auto 0;
+    padding: 8px 10px 8px 18px;
+    font-size: 16px;
+  }
+  .hero-copy > .button i { width: 38px; height: 38px; flex-basis: 38px; }
   .hero-date { z-index: 5; grid-column: 1 / -1; grid-row: 5; position: static; justify-content: flex-start; margin: 10px 4px 0; }
   .hero-audience { z-index: 5; grid-column: 1 / -1; grid-row: 6; position: static; max-width: none; margin: 9px 4px 0; font-size: 11px; }
   .hero-portrait > p { display: none; }
