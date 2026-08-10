@@ -441,7 +441,7 @@ button, input { font: inherit; }
     height: 58px;
     min-height: 58px;
     justify-self: center;
-    margin: 10px auto 0;
+    margin: -25px auto 0;
     padding: 8px 10px 8px 18px;
     font-size: 16px;
   }
