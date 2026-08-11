@@ -308,7 +308,6 @@ button, input { font: inherit; }
 .registration-note { display: grid; gap: 7px; margin: 42px 0 0; padding-top: 22px; border-top: 1px solid rgba(255,249,238,.2); }
 .registration-note strong { color: var(--sun); font-size: 20px; }
 .registration-note span { color: rgba(255,249,238,.72); }
-.registration-chat { display: inline-flex; margin-top: 24px; color: var(--sun); font-weight: 750; }
 .registration-widget { position: relative; min-width: 0; padding: 14px; color: var(--blue-dark); background: var(--ivory); border-radius: 16px; box-shadow: 0 26px 70px rgba(8,19,55,.34); }
 .registration-widget-frame { width: 100%; overflow: hidden; background: var(--blue-dark); border-radius: 10px; }
 .registration-widget-frame iframe { display: block; width: 100% !important; max-width: 100% !important; border: 0; }
