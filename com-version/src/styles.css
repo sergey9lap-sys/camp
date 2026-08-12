@@ -91,6 +91,7 @@ button, input { font: inherit; }
 .hero-portrait { position: relative; align-self: center; height: min(82svh, 760px); min-height: 610px; color: var(--blue-dark); transform: translateY(-28px); }
 .hero-portrait::before { content: ""; position: absolute; inset: 10% 1% 0; background: var(--ivory); border-radius: 48% 48% 16px 16px; box-shadow: 0 24px 60px rgba(20,32,65,.14); }
 .hero-portrait img { position: absolute; z-index: 2; inset: auto -3% 0; width: 106%; height: 108%; object-fit: contain; object-position: center bottom; }
+.hero-portrait img.hero-photo-4059 { inset: 10% 1% 0; width: 98%; height: 90%; object-fit: cover; object-position: center 34%; border-radius: 48% 48% 16px 16px; }
 .hero-portrait > p { position: absolute; z-index: 4; right: 20px; bottom: 18px; display: grid; margin: 0; padding: 9px 12px; background: rgba(255,249,238,.9); border-radius: 10px; font-size: 12px; box-shadow: 0 8px 24px rgba(20,32,65,.12); }
 .hero-portrait > p span { color: var(--muted); }
 .hero-orbit { position: absolute; z-index: 1; width: 148px; height: 148px; right: -52px; top: 24%; border: 1px solid rgba(49,87,200,.28); border-radius: 50%; }
@@ -483,6 +484,7 @@ button, input { font: inherit; }
   .hero-portrait { z-index: 2; grid-column: 2; grid-row: 1 / 4; align-self: end; justify-self: start; width: 154%; height: 458px; min-height: 0; margin: 0 -18% 0 -36%; transform: translateY(-60px); overflow: visible; }
   .hero-portrait::before { inset: 8% -8% 0 2%; background: rgba(201,220,255,.48); border-radius: 50% 50% 8px 8px; box-shadow: none; }
   .hero-portrait img { inset: auto -8% 0 auto; width: 102%; height: 92%; object-position: right bottom; }
+  .hero-portrait img.hero-photo-4059 { inset: 8% -8% 0 2%; width: 106%; height: 92%; object-fit: cover; object-position: 55% 35%; border-radius: 50% 50% 8px 8px; }
   .hero-copy > .button {
     z-index: 5;
     grid-column: 1 / -1;
