@@ -1,0 +1,10 @@
+node_modules
+dist
+.codex
+.agents
+.claude
+.impeccable
+skills
+tmp
+*.log
+.DS_Store
