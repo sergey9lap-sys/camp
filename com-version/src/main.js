@@ -138,7 +138,8 @@ const initRevealMotion = () => {
   const heroTimeline = gsap.timeline({ defaults: { ease: 'power4.out' } });
   heroTimeline
     .from('.hero .tag', { opacity: 0, y: 10, duration: .42 }, .08)
-    .from('.hero-lead', { opacity: 0, y: 14, duration: .52 }, .34)
+    .from('.hero-benefit', { opacity: 0, y: 14, duration: .52 }, .34)
+    .from('.hero-calculator-link', { opacity: 0, y: 10, duration: .44 }, .43)
     .from('.hero-copy .button', { opacity: 0, y: 14, clipPath: 'inset(0 100% 0 0)', duration: .62 }, .48)
     .from('.hero-date, .hero-audience', { opacity: 0, y: 9, stagger: .1, duration: .42 }, .68)
     .from('.hero-portrait', { opacity: 0, clipPath: 'inset(0 0 100% 0)', duration: compact ? .72 : .95 }, compact ? .18 : .28)
