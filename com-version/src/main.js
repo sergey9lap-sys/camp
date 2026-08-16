@@ -254,6 +254,40 @@ const initMicroInteractions = () => {
   });
 };
 
+const initCookieNotice = () => {
+  const consentKey = 'summer-camp-cookie-consent-v1';
+  try {
+    if (window.localStorage.getItem(consentKey) === 'accepted') return;
+  } catch {
+    // The notice still works when storage is unavailable (for example, in private mode).
+  }
+
+  const notice = document.createElement('aside');
+  notice.className = 'cookie-notice';
+  notice.setAttribute('aria-label', 'Уведомление об использовании файлов cookies');
+  notice.setAttribute('aria-live', 'polite');
+  notice.innerHTML = `
+    <div class="cookie-notice__mark" aria-hidden="true">C</div>
+    <div class="cookie-notice__content">
+      <p>Продолжая использование сайта, я выражаю согласие на обработку моих персональных данных при помощи сервиса Яндекс Метрика, подтверждаю, что ознакомлен с <a href="https://agkedu.getcourse.ru/personaldata" target="_blank" rel="noreferrer">политикой в отношении обработки персональных данных</a> и уведомлен об использовании файлов cookies.</p>
+      <button class="cookie-notice__accept" type="button">Согласен</button>
+    </div>
+  `;
+  document.body.append(notice);
+
+  requestAnimationFrame(() => notice.classList.add('is-visible'));
+  notice.querySelector('.cookie-notice__accept').addEventListener('click', () => {
+    try {
+      window.localStorage.setItem(consentKey, 'accepted');
+    } catch {
+      // Closing the current notice remains possible even if storage is blocked.
+    }
+    notice.classList.remove('is-visible');
+    notice.classList.add('is-closing');
+    window.setTimeout(() => notice.remove(), reduceMotion ? 0 : 280);
+  });
+};
+
 bindRussianTypography();
 initSmoothScroll();
 initHeader();
@@ -261,5 +295,6 @@ initRevealMotion();
 initRouteMotion();
 initCalculator();
 initMicroInteractions();
+initCookieNotice();
 
 window.addEventListener('load', () => ScrollTrigger.refresh(), { once: true });
